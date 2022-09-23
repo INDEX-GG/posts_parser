@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from utils import read_from_file
+from app.utils import read_from_file
 
 app = FastAPI()
 

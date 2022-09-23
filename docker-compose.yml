@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    image: posts_parser
+    container_name: posts_parser
+    restart: always
+    ports:
+      - 5020:8000
+    volumes:
+      - /var/www/posts_parser:/code/files
