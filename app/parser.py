@@ -4,7 +4,7 @@ import time
 
 from bs4 import BeautifulSoup, PageElement
 from selenium import webdriver
-from utils import generate_vendor_code
+from app.utils import generate_vendor_code, write_to_file
 
 MAX_PRICE = 100000
 excluded_values = ('0', 0, None, '1', 1)
@@ -97,5 +97,5 @@ def parse_avito() -> list:
             if is_valid_post(parsed_post):
                 posts.append(parsed_post)
     driver.close()
-    write_to_file(posts)
+    write_to_file(posts, 'avito.txt')
     return posts
