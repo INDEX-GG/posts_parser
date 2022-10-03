@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from pydantic import BaseModel
 
-from utils import read_from_file
+from app.utils import read_from_file
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
