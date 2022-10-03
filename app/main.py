@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from pydantic import BaseModel
 
-from app.utils import read_from_file
+from utils import read_from_file
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -16,7 +17,16 @@ app.add_middleware(
 )
 
 
+class Posts(BaseModel):
+    page: int | None = 1
+
+
 @app.get('/posts')
-async def get_posts():
-    result = read_from_file(file_name='avito.txt')
+async def get_posts(params: Posts = Depends()):
+    page_filters = {
+        1: 'avito.txt',
+        2: 'avito2.txt',
+        3: 'avito3.txt'
+    }
+    result = read_from_file(file_name=page_filters[params.page])
     return {'posts': result}
