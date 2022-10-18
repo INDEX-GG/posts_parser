@@ -18,7 +18,7 @@ def write_to_file(posts: list, file_name: str) -> None:
 
 def read_from_file(file_name: str) -> list:
     result = []
-    with open(file_name, 'r') as f:
+    with open(file_name, 'r', encoding='utf-8') as f:
         for line in f:
             try:
                 result.append(json.loads(line.replace("'", '"').replace('\\xa0', ' ')))
