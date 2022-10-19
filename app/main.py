@@ -26,14 +26,14 @@ async def get_posts(params: Posts = Depends()):
     page_filters = {
         1: 'yandex.txt',
         2: 'yandex2.txt',
-        # 3: 'yandex3.txt',
+        3: 'yandex3.txt',
         4: 'tor.json',
-        # 5: 'yandex4.txt',
+        5: 'stanki.json',
         6: 'yandex6.txt',
         7: 'yandex7.txt'
     }
     print(params.page)
-    if params.page == 4:
+    if params.page == 4 or params.page == 5:
         result = read_from_json_file(file_name=page_filters[params.page])
     else:
         result = read_from_file(file_name=page_filters[params.page])
