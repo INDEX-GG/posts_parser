@@ -31,3 +31,16 @@ def read_from_json_file(file_name: str) -> list:
     with open(file_name, 'r', encoding='utf-8') as read_file:
         result = json.load(read_file)
     return result
+
+
+def get_post_item(item_id: int) -> list:
+    result = []
+    sub_string = str(item_id)
+    with open('yandex.txt', 'r', encoding='utf-8') as f:
+        for line in f:
+            if line.find("'id': '" + sub_string + "'") != -1:
+                try:
+                    result.append(json.loads(line.replace("'", '"').replace('\\xa0', ' ')))
+                except:
+                    pass
+    return result
