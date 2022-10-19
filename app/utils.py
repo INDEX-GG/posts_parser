@@ -25,3 +25,9 @@ def read_from_file(file_name: str) -> list:
             except:
                 pass
     return result
+
+
+def read_from_json_file(file_name: str) -> list:
+    with open(file_name, 'r', encoding='utf-8') as read_file:
+        result = json.load(read_file)
+    return result
