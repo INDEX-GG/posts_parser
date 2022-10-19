@@ -32,7 +32,6 @@ async def get_posts(params: Posts = Depends()):
         6: 'yandex6.txt',
         7: 'yandex7.txt'
     }
-    print(params.page)
     if params.page == 4 or params.page == 5:
         result = read_from_json_file(file_name=page_filters[params.page])
     else:

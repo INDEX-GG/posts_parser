@@ -7,6 +7,7 @@ COPY ./yandex3.txt /code/yandex3.txt
 COPY ./yandex6.txt /code/yandex6.txt
 COPY ./yandex7.txt /code/yandex7.txt
 COPY ./tor.json /code/tor.json
+COPY ./zoom.json /code/zoom.json
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./app /code/app
 CMD ["uvicorn", "app.main:app", "--reload", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
