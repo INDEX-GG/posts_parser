@@ -30,7 +30,7 @@ async def get_posts(params: Posts = Depends()):
         4: 'tor.json',
         # 5: 'yandex4.txt',
         6: 'yandex6.txt',
-        # 7: 'yandex7.txt'
+        7: 'yandex7.txt'
     }
     print(params.page)
     if params.page == 4:
