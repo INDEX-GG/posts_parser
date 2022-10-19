@@ -28,7 +28,7 @@ async def get_posts(params: Posts = Depends()):
         2: 'yandex2.txt',
         3: 'yandex3.txt',
         4: 'tor.json',
-        5: 'stanki.json',
+        5: 'zoom.json',
         6: 'yandex6.txt',
         7: 'yandex7.txt'
     }
