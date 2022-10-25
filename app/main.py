@@ -26,7 +26,7 @@ async def get_posts(params: Posts = Depends()):
     page_filters = {
         1: 'one.json',
         2: 'two.json',
-        3: 'Threee.json',
+        3: 'three.json',
         4: 'tor.json',
         5: 'zoom.json',
         6: 'stroika.json',
