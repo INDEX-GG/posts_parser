@@ -1,9 +1,9 @@
 FROM python:3.10.4
 WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
-COPY ./yandex.txt /code/yandex.txt
-COPY ./yandex2.txt /code/yandex2.txt
-COPY ./yandex3.txt /code/yandex3.txt
+COPY ./one.JSON /code/one.JSON
+COPY ./Two.JSON /code/Two.JSON
+COPY ./Threee.JSON /code/Threee.JSON
 COPY ./tor.json /code/tor.json
 COPY ./zoom.json /code/zoom.json
 COPY ./stroika.json /code/stroika.json

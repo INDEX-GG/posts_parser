@@ -24,24 +24,22 @@ class Posts(BaseModel):
 @app.get('/posts')
 async def get_posts(params: Posts = Depends()):
     page_filters = {
-        1: 'yandex.txt',
-        2: 'yandex2.txt',
-        3: 'yandex3.txt',
+        1: 'one.json',
+        2: 'two.json',
+        3: 'Threee.json',
         4: 'tor.json',
         5: 'zoom.json',
         6: 'stroika.json',
         7: 'stroika2.json'
     }
-    if params.page == 4 or params.page == 5 or params.page == 6 or params.page == 7:
-        result = read_from_json_file(file_name=page_filters[params.page])
-    else:
-        result = read_from_file(file_name=page_filters[params.page])
+
+    result = read_from_json_file(file_name=page_filters[params.page])
     return {'posts': result}
 
 
 @app.get("/post")
 async def post():
-    result = read_from_file(file_name='yandex.txt')
+    result = read_from_json_file(file_name='one.json')
     return {'posts': result}
 
 
