@@ -30,7 +30,8 @@ async def get_posts(params: Posts = Depends()):
         4: 'tor.json',
         5: 'zoom.json',
         6: 'stroika.json',
-        7: 'stroika2.json'
+        7: 'stroika2.json',
+        8: 'parser.json'
     }
 
     result = read_from_json_file(file_name=page_filters[params.page])
