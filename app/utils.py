@@ -44,3 +44,17 @@ def get_post_item(item_id: int) -> list:
                 except:
                     pass
     return result
+
+
+def str_to_int(file_name: str) -> list:
+    with open(file_name, 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            input_dict[i]['price'] = input_dict[i]['price'].replace(" ", "")
+        output_dict = [x for x in input_dict if int(x['price']) >= 10000]
+        qwe = json.dumps(output_dict, ensure_ascii=False)
+        print(qwe)
+    return input_dict
+
+
+str_to_int("../stroi-materialy74.json")
