@@ -51,8 +51,7 @@ def str_to_int(file_name: str) -> list:
         input_dict = json.load(read_file)
         for i in range(len(input_dict)):
             input_dict[i]['price'] = input_dict[i]['price'].replace(" ", "")
-        output_dict = [x for x in input_dict if int(x['price']) >= 10000]
-        qwe = json.dumps(output_dict, ensure_ascii=False)
+        # output_dict = [x for x in input_dict if int(x['price']) >= 10000]
+        qwe = json.dumps(input_dict, ensure_ascii=False)
         print(qwe)
     return input_dict
-
