@@ -56,5 +56,3 @@ def str_to_int(file_name: str) -> list:
         print(qwe)
     return input_dict
 
-
-str_to_int("../stroimaterialy74.json")
