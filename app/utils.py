@@ -1,7 +1,8 @@
-import json
-from string import digits
 import random
 import os
+import json
+import requests
+from string import digits
 
 
 def generate_vendor_code() -> str:
@@ -53,6 +54,18 @@ def str_to_int(file_name: str) -> list:
             input_dict[i]['price'] = input_dict[i]['price'].replace(" ", "")
         output_dict = [x for x in input_dict if int(x['price']) >= 8000]
         qwe = json.dumps(output_dict, ensure_ascii=False)
-        print(qwe)
     return input_dict
 
+
+def upload_images(file_name: str) -> list:
+    with open(file_name, 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            url = input_dict[i]['image']
+            r = requests.get(url, allow_redirects=True)
+            destination = url.split('/')[-1]
+            open(destination, 'wb').write(r.content)
+        return input_dict
+
+
+# upload_images("../four.json")
