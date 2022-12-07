@@ -9,6 +9,7 @@ COPY products/stroi-materialy74.json /code/stroi-materialy74.json
 COPY products/stroimaterialy74.json /code/stroimaterialy74.json
 COPY products/zapchasti174.json /code/zapchasti174.json
 COPY products/zapchasti774.json /code/zapchasti774.json
+COPY photo /code/photo
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./app /code/app
 CMD ["uvicorn", "app.main:app", "--reload", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
