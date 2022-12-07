@@ -79,5 +79,3 @@ def new_image(file_name: str) -> list:
         print(qwe)
         return input_dict
 
-
-new_image('../products/zapchasti774.json')
