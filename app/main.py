@@ -8,6 +8,7 @@ from app.utils import read_from_json_file, get_post_item
 app = FastAPI()
 
 app.mount("/photo", StaticFiles(directory="photo"), name="photo")
+app.mount("/files", StaticFiles(directory="files"), name="files")
 
 origins = ["*"]
 
