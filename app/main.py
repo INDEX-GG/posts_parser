@@ -1,10 +1,13 @@
 from fastapi import FastAPI, Depends
 from pydantic import BaseModel
 
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from app.utils import read_from_json_file, get_post_item
 
 app = FastAPI()
+
+app.mount("/photo", StaticFiles(directory="photo"), name="photo")
 
 origins = ["*"]
 
