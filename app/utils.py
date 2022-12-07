@@ -63,8 +63,11 @@ def upload_images(file_name: str) -> list:
         for i in range(len(input_dict)):
             url = input_dict[i]['image']
             r = requests.get(url, allow_redirects=True)
-            destination = url.split('/')[-1]
+            destination = str(i) + '.' + url.split('.')[-1]
+            input_dict[i]['image'] = 'photo/stroimaterialy74/' + destination
             open(destination, 'wb').write(r.content)
+        qwe = json.dumps(input_dict, ensure_ascii=False)
+        print(qwe)
         return input_dict
 
 
@@ -78,4 +81,3 @@ def new_image(file_name: str) -> list:
         qwe = json.dumps(input_dict, ensure_ascii=False)
         print(qwe)
         return input_dict
-
