@@ -35,16 +35,14 @@ def read_from_json_file(file_name: str) -> list:
 
 
 def get_post_item(item_id: int) -> list:
-    result = []
     sub_string = str(item_id)
-    with open('yandex.txt', 'r', encoding='utf-8') as f:
-        for line in f:
-            if line.find("'id': '" + sub_string + "'") != -1:
-                try:
-                    result.append(json.loads(line.replace("'", '"').replace('\\xa0', ' ')))
-                except:
-                    pass
-    return result
+    with open('../products/zapchasti774.json', 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            if input_dict[i]['id'] == sub_string:
+                return input_dict[i]
+            else:
+                return False
 
 
 def str_to_int(file_name: str) -> list:
@@ -75,9 +73,7 @@ def new_image(file_name: str) -> list:
     with open(file_name, 'r', encoding='utf-8') as read_file:
         input_dict = json.load(read_file)
         for i in range(len(input_dict)):
-            url = input_dict[i]['image']
-            destination = url.split('/')[-1]
-            input_dict[i]['image'] = 'photo/zapchasti774/' + destination
+            input_dict[i]['id'] = str(i)
         qwe = json.dumps(input_dict, ensure_ascii=False)
         print(qwe)
         return input_dict

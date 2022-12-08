@@ -8,7 +8,6 @@ from app.utils import read_from_json_file, get_post_item
 app = FastAPI()
 
 app.mount("/photo", StaticFiles(directory="photo"), name="photo")
-app.mount("/files", StaticFiles(directory="files"), name="files")
 
 origins = ["*"]
 
@@ -37,14 +36,13 @@ async def get_posts(params: Posts = Depends()):
         7: 'stroimaterialy74.json',
         8: 'metallstanki74.json'
     }
-
     result = read_from_json_file(file_name=page_filters[params.page])
     return {'posts': result}
 
 
 @app.get("/post")
 async def post():
-    result = read_from_json_file(file_name='zapchasti774.json')
+    result = read_from_json_file(file_name='/products/zapchasti774.json')
     return {'posts': result}
 
 
