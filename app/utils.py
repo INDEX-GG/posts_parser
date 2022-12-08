@@ -36,7 +36,7 @@ def read_from_json_file(file_name: str) -> list:
 
 def get_post_item(item_id: int) -> list:
     sub_string = str(item_id)
-    with open('../products/zapchasti774.json', 'r', encoding='utf-8') as read_file:
+    with open('zapchasti774.json', 'r', encoding='utf-8') as read_file:
         input_dict = json.load(read_file)
         for i in range(len(input_dict)):
             if input_dict[i]['id'] == sub_string:

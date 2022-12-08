@@ -42,7 +42,7 @@ async def get_posts(params: Posts = Depends()):
 
 @app.get("/post")
 async def post():
-    result = read_from_json_file(file_name='/products/zapchasti774.json')
+    result = read_from_json_file(file_name='zapchasti774.json')
     return {'posts': result}
 
 
