@@ -41,8 +41,6 @@ def get_post_item(item_id: int) -> list:
         for i in range(len(input_dict)):
             if input_dict[i]['id'] == sub_string:
                 return input_dict[i]
-            else:
-                return False
 
 
 def str_to_int(file_name: str) -> list:
