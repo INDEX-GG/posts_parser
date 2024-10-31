@@ -108,7 +108,7 @@ async def get_stroy_mech_payment_ref(amount: int, email: str | None = None):
 async def generate_stroy_mech_payment_ref(amount: int, email: str | None = None):
 
     order_number = str(random.randint(10000000, 99999999))
-    return_url = "https://xn----8sbaslfcb2amfxmo5cv8m.xn--p1ai"
+    return_url = "https://partmarket.online/"
 
     if email:
         url = f"https://bankwallet.ru/payment/rest/register.do?amount={amount}&currency=643&orderNumber={order_number}&returnUrl={return_url}&userName=StroyMechanization-api&password=a6Zj8Ht9Nw!&email={email}"  # TEST URL
