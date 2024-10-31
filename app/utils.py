@@ -42,6 +42,38 @@ def get_post_item(item_id: int) -> list:
             if input_dict[i]['id'] == sub_string:
                 return input_dict[i]
 
+def get_post_item_1(item_id: int) -> list:
+    sub_string = str(item_id)
+    with open('spec-stroi174.json', 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            if input_dict[i]['id'] == sub_string:
+                return input_dict[i]
+
+def get_post_item_2(item_id: int) -> list:
+    sub_string = str(item_id)
+    with open('1-stk.json', 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            if input_dict[i]['id'] == sub_string:
+                return input_dict[i]
+
+def get_post_item_3(item_id: int) -> list:
+    sub_string = str(item_id)
+    with open('m-ob.json', 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            if input_dict[i]['id'] == sub_string:
+                return input_dict[i]
+
+def get_post_item_4(item_id: int) -> list:
+    sub_string = str(item_id)
+    with open('shesterenka_4.json', 'r', encoding='utf-8') as read_file:
+        input_dict = json.load(read_file)
+        for i in range(len(input_dict)):
+            if input_dict[i]['id'] == sub_string:
+                return input_dict[i]
+
 
 def str_to_int(file_name: str) -> list:
     with open(file_name, 'r', encoding='utf-8') as read_file:
